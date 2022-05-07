@@ -1,4 +1,8 @@
 import React from "react";
+import ListOfFilms from "./components/list/ListOfFilms";
+import ListOfBooks from "./components/list/ListOfBooks";
+import ProductsOver1500 from "./components/products/Products";
+import Button from "./events/reactEvents";
 
 const client01 = {
   client: "Luana",
@@ -47,6 +51,12 @@ const App = () => {
         </p>
         <p>Total Expend: {totalExpend}</p>
         {totalExpend > 10000 && <p>You're expending too much.</p>}
+      </div>
+      <div>
+        <ListOfFilms />
+        <ListOfBooks />
+        <ProductsOver1500 />
+        <Button />
       </div>
     </React.Fragment>
   );

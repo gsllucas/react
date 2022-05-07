@@ -3,6 +3,11 @@ import ListOfFilms from "./components/list/ListOfFilms";
 import ListOfBooks from "./components/list/ListOfBooks";
 import ProductsOver1500 from "./components/products/Products";
 import Button from "./events/reactEvents";
+import {
+  ChildrenComponent,
+  PropsComponent,
+  SpreadPropsComponent,
+} from "./props/Props";
 
 const client01 = {
   client: "Luana",
@@ -57,6 +62,18 @@ const App = () => {
         <ListOfBooks />
         <ProductsOver1500 />
         <Button />
+        <PropsComponent
+          text="Esse é um paragrafo utilizando um component com props no react"
+          size="40px"
+          color="#38b88b"
+        />
+        <div style={{ display: "flex" }}>
+          <ChildrenComponent>Here goes children!</ChildrenComponent>
+          <ChildrenComponent>Here goes children!</ChildrenComponent>
+          <ChildrenComponent>Here goes children!</ChildrenComponent>
+        </div>
+        <SpreadPropsComponent label="Seu nome" type="name" required />
+        <SpreadPropsComponent label="Sua senha" type="password" />
       </div>
     </React.Fragment>
   );

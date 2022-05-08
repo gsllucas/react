@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ListOfFilms from "./components/list/ListOfFilms";
 import ListOfBooks from "./components/list/ListOfBooks";
 import ProductsOver1500 from "./components/products/Products";
@@ -8,6 +8,8 @@ import {
   PropsComponent,
   SpreadPropsComponent,
 } from "./props/Props";
+import { Counter, ReactHooks } from "./hooks/Hooks";
+import { HooksData } from "./hooks/HooksData";
 
 const client01 = {
   client: "Luana",
@@ -44,6 +46,14 @@ const App = () => {
   const totalExpend = calculateTotalExpense(purchases);
 
   return (
+    <Fragment>
+      <div>
+        <HooksData />
+      </div>
+    </Fragment>
+  );
+
+  return (
     <React.Fragment>
       <div>
         <p>Name: {client}</p>
@@ -68,12 +78,27 @@ const App = () => {
           color="#38b88b"
         />
         <div style={{ display: "flex" }}>
-          <ChildrenComponent>Here goes children!</ChildrenComponent>
-          <ChildrenComponent>Here goes children!</ChildrenComponent>
-          <ChildrenComponent>Here goes children!</ChildrenComponent>
+          <ChildrenComponent>
+            <h1>Here goes children!</h1>
+          </ChildrenComponent>
+          <ChildrenComponent>
+            <h1>Here goes children!</h1>
+          </ChildrenComponent>
+          <ChildrenComponent>
+            <h1>Here goes children!</h1>
+          </ChildrenComponent>
         </div>
         <SpreadPropsComponent label="Seu nome" type="name" required />
         <SpreadPropsComponent label="Sua senha" type="password" />
+      </div>
+      <div>
+        <ReactHooks />
+      </div>
+      <div style={{ margin: "16px 0" }}>
+        <Counter />
+      </div>
+      <div>
+        <HooksData />
       </div>
     </React.Fragment>
   );

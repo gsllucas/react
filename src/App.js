@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import ListOfFilms from "./components/list/ListOfFilms";
 import ListOfBooks from "./components/list/ListOfBooks";
 import ProductsOver1500 from "./components/products/Products";
@@ -10,6 +10,7 @@ import {
 } from "./props/Props";
 import { Counter, ReactHooks } from "./hooks/Hooks";
 import { HooksData } from "./hooks/HooksData";
+import { UseEffectHook, UseEffectExercises } from "./hooks/UseEffect";
 
 const client01 = {
   client: "Luana",
@@ -41,13 +42,25 @@ function calculateTotalExpense(purchases) {
 }
 
 const App = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
   const dados = client02;
   const { client, age, purchases, isActive } = dados;
   const totalExpend = calculateTotalExpense(purchases);
 
   return (
-    <Fragment>
+    <>
       <div>
+        <UseEffectExercises />
+      </div>
+    </>
+  );
+
+  return (
+    <Fragment>
+      {isVisible && <UseEffectHook />}
+      <div>
+        <button onClick={() => setIsVisible(!isVisible)}>toogle</button>
         <HooksData />
       </div>
     </Fragment>

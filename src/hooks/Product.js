@@ -1,15 +1,15 @@
 import React from "react";
 
-const Product = ({ name, price, photoUrls }) => {
-  console.log(photoUrls);
+const Product = ({ product }) => {
+  const { nome, preco, fotos } = product;
 
   return (
     <>
-      <h1>{name}</h1>
-      <p>{price}</p>
+      <h1>{nome}</h1>
+      <p>{preco}</p>
       <div>
-        {photoUrls.map((photo) => (
-          <img key={photo} src={photo.src} alt="product"></img>
+        {fotos.map((foto) => (
+          <img key={foto.src} src={foto.src} alt="foto"></img>
         ))}
       </div>
     </>

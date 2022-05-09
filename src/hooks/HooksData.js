@@ -9,14 +9,13 @@ async function fetchData(url) {
 }
 
 export const HooksData = () => {
-  const [product, setProduct] = useState({});
-  let [loading, setLoading] = useState(false);
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   async function getProductDescription(product) {
     setLoading(true);
     const completeUrl = `${baseUrl}/${product}`;
     const productDatasource = await fetchData(completeUrl);
-    console.log(productDatasource);
     setProduct(productDatasource);
     setLoading(false);
   }
@@ -33,15 +32,7 @@ export const HooksData = () => {
         <button onClick={() => getProductDescription("tablet")}>Tablet</button>
       </div>
       <div>
-        {loading
-          ? "Carregando..."
-          : !loading && (
-              <Product
-                name={product.nome}
-                price={product.preco}
-                photoUrls={product.fotos}
-              />
-            )}
+        {loading ? "Carregando..." : product && <Product product={product} />}
       </div>
     </>
   );

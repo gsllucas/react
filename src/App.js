@@ -11,6 +11,7 @@ import {
 import { Counter, ReactHooks } from "./hooks/Hooks";
 import { HooksData } from "./hooks/HooksData";
 import { UseEffectHook, UseEffectExercises } from "./hooks/UseEffect";
+import UseRef from "./hooks/UseRef";
 
 const client01 = {
   client: "Luana",
@@ -52,6 +53,10 @@ const App = () => {
     <>
       <div>
         <UseEffectExercises />
+      </div>
+      <br></br>
+      <div>
+        <UseRef />
       </div>
     </>
   );

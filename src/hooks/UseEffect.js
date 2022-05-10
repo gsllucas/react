@@ -54,7 +54,7 @@ export const UseEffectExercises = () => {
 
   return (
     <>
-      <h1>Preferência:</h1>
+      <h1>Preferência: {product && product.nome}</h1>
       <div>
         <button
           style={{ padding: "12px 24px", margin: "12px" }}

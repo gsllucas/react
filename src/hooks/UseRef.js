@@ -5,7 +5,16 @@ const UseRef = () => {
   const inputElement = useRef();
 
   function addTodo(todo) {
+    const input = inputElement.current.value;
+    if (input.length === 0 || input === "") {
+      return;
+    }
+
     setTodos([...todos, todo]);
+    resetInput();
+  }
+
+  function resetInput() {
     inputElement.current.value = "";
     inputElement.current.focus();
   }

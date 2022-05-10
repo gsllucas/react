@@ -14,6 +14,8 @@ import { UseEffectHook, UseEffectExercises } from "./hooks/UseEffect";
 import UseRef from "./hooks/UseRef";
 import UseMemo from "./hooks/UseMemo";
 import UseCallback from "./hooks/UseCallback";
+import UseContext from "./hooks/UseContext";
+import GlobalContext from "./hooks/GlobalContext";
 
 const client01 = {
   client: "Luana",
@@ -52,7 +54,7 @@ const App = () => {
   const totalExpend = calculateTotalExpense(purchases);
 
   return (
-    <>
+    <GlobalContext>
       <div>
         <UseEffectExercises />
       </div>
@@ -64,7 +66,10 @@ const App = () => {
       <div>
         <UseCallback />
       </div>
-    </>
+      <div>
+        <UseContext />
+      </div>
+    </GlobalContext>
   );
 
   return (

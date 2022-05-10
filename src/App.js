@@ -12,6 +12,8 @@ import { Counter, ReactHooks } from "./hooks/Hooks";
 import { HooksData } from "./hooks/HooksData";
 import { UseEffectHook, UseEffectExercises } from "./hooks/UseEffect";
 import UseRef from "./hooks/UseRef";
+import UseMemo from "./hooks/UseMemo";
+import UseCallback from "./hooks/UseCallback";
 
 const client01 = {
   client: "Luana",
@@ -57,6 +59,10 @@ const App = () => {
       <br></br>
       <div>
         <UseRef />
+        <UseMemo />
+      </div>
+      <div>
+        <UseCallback />
       </div>
     </>
   );

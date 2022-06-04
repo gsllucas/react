@@ -16,7 +16,7 @@ import UseMemo from "./hooks/UseMemo";
 import UseCallback from "./hooks/UseCallback";
 import UseContext from "./hooks/UseContext";
 import GlobalContext from "./hooks/GlobalContext";
-import useLocalStorage from "./hooks/UseCustomHooks";
+import useLocalStorage from "./custom-hooks/UseCustomHooks";
 
 const client01 = {
   client: "Luana",

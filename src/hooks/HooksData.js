@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import Product from "./Product";
+import React, { useState } from 'react';
+import Product from './Product';
 
-const baseUrl = "https://ranekapi.origamid.dev/json/api/produto";
+const baseUrl = 'https://ranekapi.origamid.dev/json/api/produto';
 
 async function fetchData(url) {
   const response = await fetch(url);
@@ -22,17 +22,17 @@ export const HooksData = () => {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
-        <button onClick={() => getProductDescription("notebook")}>
+      <div style={{ display: 'flex' }}>
+        <button onClick={() => getProductDescription('notebook')}>
           Notebook
         </button>
-        <button onClick={() => getProductDescription("smartphone")}>
+        <button onClick={() => getProductDescription('smartphone')}>
           Smartphone
         </button>
-        <button onClick={() => getProductDescription("tablet")}>Tablet</button>
+        <button onClick={() => getProductDescription('tablet')}>Tablet</button>
       </div>
       <div>
-        {loading ? "Carregando..." : product && <Product product={product} />}
+        {loading ? 'Carregando...' : product && <Product product={product} />}
       </div>
     </>
   );

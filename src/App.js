@@ -16,6 +16,7 @@ import UseMemo from "./hooks/UseMemo";
 import UseCallback from "./hooks/UseCallback";
 import UseContext from "./hooks/UseContext";
 import GlobalContext from "./hooks/GlobalContext";
+import useLocalStorage from "./custom-hooks/UseCustomHooks";
 
 const client01 = {
   client: "Luana",
@@ -53,6 +54,24 @@ const App = () => {
   const { client, age, purchases, isActive } = dados;
   const totalExpend = calculateTotalExpense(purchases);
 
+  const [favorite, setFavorite] = useLocalStorage("product", "Nenhum dado");
+
+  function setPreferenceOnStorage(favorite) {
+    setFavorite(favorite);
+  }
+
+  return (
+    <GlobalContext>
+      <p>Favorite: {favorite}</p>
+      <button onClick={() => setPreferenceOnStorage("Notebook")}>
+        Notebook
+      </button>
+      <button onClick={() => setPreferenceOnStorage("Computador")}>
+        Computador
+      </button>
+    </GlobalContext>
+  );
+
   return (
     <GlobalContext>
       <div>
@@ -68,6 +87,9 @@ const App = () => {
       </div>
       <div>
         <UseContext />
+      </div>
+      <div>
+        <button></button>
       </div>
     </GlobalContext>
   );

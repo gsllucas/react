@@ -17,32 +17,34 @@ import UseCallback from "./hooks/UseCallback";
 import UseContext from "./hooks/UseContext";
 import GlobalContext from "./hooks/GlobalContext";
 import useLocalStorage from "./custom-hooks/UseCustomHooks";
+import Form from './forms/Form';
+import ComponentClass from './components/component-class/ComponentClass';
 
 const client01 = {
-  client: "Luana",
+  client: 'Luana',
   age: 27,
   purchases: [
-    { product: "Notebook", price: "R$2500" },
-    { product: "Geladeira", price: "R$3000" },
-    { product: "Smartphone", price: "R$1500" },
+    { product: 'Notebook', price: 'R$2500' },
+    { product: 'Geladeira', price: 'R$3000' },
+    { product: 'Smartphone', price: 'R$1500' },
   ],
   isActive: true,
 };
 
 const client02 = {
-  client: "Mario",
+  client: 'Mario',
   age: 31,
   purchases: [
-    { product: "Notebook", price: "R$5500" },
-    { product: "Geladeira", price: "R$5000" },
-    { product: "Smartphone", price: "R$4500" },
+    { product: 'Notebook', price: 'R$5500' },
+    { product: 'Geladeira', price: 'R$5000' },
+    { product: 'Smartphone', price: 'R$4500' },
   ],
   isActive: false,
 };
 
 function calculateTotalExpense(purchases) {
   return purchases.reduce((acc, purchase) => {
-    const formattedPrice = Number(purchase.price.replace("R$", ""));
+    const formattedPrice = Number(purchase.price.replace('R$', ''));
     return (acc += formattedPrice);
   }, 0);
 }
@@ -54,23 +56,13 @@ const App = () => {
   const { client, age, purchases, isActive } = dados;
   const totalExpend = calculateTotalExpense(purchases);
 
-  const [favorite, setFavorite] = useLocalStorage("product", "Nenhum dado");
+  const [favorite, setFavorite] = useLocalStorage('product', 'Nenhum dado');
 
   function setPreferenceOnStorage(favorite) {
     setFavorite(favorite);
   }
 
-  return (
-    <GlobalContext>
-      <p>Favorite: {favorite}</p>
-      <button onClick={() => setPreferenceOnStorage("Notebook")}>
-        Notebook
-      </button>
-      <button onClick={() => setPreferenceOnStorage("Computador")}>
-        Computador
-      </button>
-    </GlobalContext>
-  );
+  return <ComponentClass />;
 
   return (
     <GlobalContext>
@@ -110,9 +102,9 @@ const App = () => {
         <p>Name: {client}</p>
         <p>Age: {age}</p>
         <p>
-          Situation:{" "}
-          <span style={{ color: isActive ? "green" : "red" }}>
-            {isActive ? "Active" : "Inactive"}
+          Situation:{' '}
+          <span style={{ color: isActive ? 'green' : 'red' }}>
+            {isActive ? 'Active' : 'Inactive'}
           </span>
         </p>
         <p>Total Expend: {totalExpend}</p>
@@ -128,7 +120,7 @@ const App = () => {
           size="40px"
           color="#38b88b"
         />
-        <div style={{ display: "flex" }}>
+        <div style={{ display: 'flex' }}>
           <ChildrenComponent>
             <h1>Here goes children!</h1>
           </ChildrenComponent>
@@ -145,7 +137,7 @@ const App = () => {
       <div>
         <ReactHooks />
       </div>
-      <div style={{ margin: "16px 0" }}>
+      <div style={{ margin: '16px 0' }}>
         <Counter />
       </div>
       <div>
